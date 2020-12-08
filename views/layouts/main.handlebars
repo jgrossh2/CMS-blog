@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Blog</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--nav bootstrap-->
+      <ul class="nav bg-dark">
+        <li class="nav-item">
+            <a class="nav-link active text-light" href="'/'">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" href="'/'">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" href="'/'">Login</a>
+        </li>
+        </ul>
+        <!-- title navbar-->
+        <nav class="navbar navbar-light bg-dark text-light">
+            <span class="navbar-brand mb-0 h1 text-light">Tech blog</span>
+        </nav>
+    </header>
+    <main>
+        <div class="card border-dark">
+            <div class="card-header text-light bg-dark">
+              <span>Quote</span>
+              <span>Posted By</span>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="card border-dark">
+            <div class="card-header text-light bg-dark">
+              Quote
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              </blockquote>
+            </div>
+          </div>
+      <!-- {{{ body }}} -->
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+  {{!-- {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}} --}}
+</body>
+
+</html>

@@ -1,12 +1,13 @@
 const express = require('express');
 const mysql = require('mysql2');
-const sequelize = require('./config/cnnection');
+const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+// const hbs = exphbs.create({});
 const session = require('express-session');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -29,11 +30,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //takes contents of folder as static assets
 app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', hbs.engine);
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // turn on routes
-app.use(routes);
+// app.use(routes);
 
 // turn on connection to db and server
 //sync is sequelize taking models and connecting them to database tables
