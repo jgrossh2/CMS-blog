@@ -1,3 +1,9 @@
-<div>
-    Welcome to the jungle
-</div>
+<ol class="post-list">
+    <!--declaring post variable name for subsequent placeholder-->
+    {{#each posts as |post|}}
+  <li>
+    <!-- < used for partial file-->
+     {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>

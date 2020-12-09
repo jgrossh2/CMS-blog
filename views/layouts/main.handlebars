@@ -15,14 +15,21 @@
       <!--nav bootstrap-->
       <ul class="nav bg-dark">
         <li class="nav-item">
-            <a class="nav-link active text-light" href="'/'">Home</a>
+            <a class="nav-link active text-light" href='/home'>Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href="'/'">Dashboard</a>
+            <a class="nav-link text-light" href='/dashboard'>Dashboard</a>
         </li>
+        
+        {{#if loggedIn}}
         <li class="nav-item">
-            <a class="nav-link text-light" href="'/'">Login</a>
+            <a class="nav-link text-light" href='/logout'>Logout</a>
         </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link text-light" href='/login'>Login</a>
+        </li>
+        {{/if}}
         </ul>
         <!-- title navbar-->
         <nav class="navbar navbar-light bg-dark text-light">
@@ -30,40 +37,16 @@
         </nav>
     </header>
     
-        <div class="card border-dark">
-            <div class="card-header text-light bg-dark">
-              <span>Quote</span>
-              <span>Posted By</span>
-            </div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-              </blockquote>
-            </div>
-          </div>
 
-          <div class="card border-dark">
-            <div class="card-header text-light bg-dark">
-              Quote
-            </div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-              </blockquote>
-            </div>
-          </div>
     <main>
       {{{ body }}}
     </main>
     <footer>
       Thanks for visiting!
     </footer>
-  </div>
-  {{!-- {{#if loggedIn}}
+  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
-  {{/if}} --}}
+  {{/if}}
 </body>
 
 </html>
