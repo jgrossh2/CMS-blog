@@ -1,4 +1,5 @@
 const express = require('express');
+const routes = require('./controllers');
 const mysql = require('mysql2');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
@@ -6,8 +7,9 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const path = require('path');
 
+
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -34,7 +36,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // turn on routes
-// app.use(routes);
+app.use(routes);
 
 // turn on connection to db and server
 //sync is sequelize taking models and connecting them to database tables
