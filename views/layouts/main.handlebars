@@ -15,19 +15,19 @@
       <!--nav bootstrap-->
       <ul class="nav bg-dark">
         <li class="nav-item">
-            <a class="nav-link active text-light" href='/home'>Home</a>
+            <a class="nav-link active text-light" id="home" href='/home'>Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-light" href='/dashboard'>Dashboard</a>
+            <a class="nav-link text-light" id="dashboard" href='/dashboard'>Dashboard</a>
         </li>
         
         {{#if loggedIn}}
         <li class="nav-item">
-            <a class="nav-link text-light" href='/logout'>Logout</a>
+            <a class="nav-link text-light" id="logout" href='/'>Logout</a>
         </li>
         {{else}}
         <li class="nav-item">
-            <a class="nav-link text-light" href='/login'>Login</a>
+            <a class="nav-link text-light" id="login" href='/login'>Login</a>
         </li>
         {{/if}}
         </ul>

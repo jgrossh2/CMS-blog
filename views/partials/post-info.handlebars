@@ -1,14 +1,15 @@
 <article class="post">
     <div class="card border-dark">
         <div class="card-header text-light bg-dark">
-            <span>Quote {{title}}</span>
-            <span>Posted By </span>
+            <span>{{title}}</span>
+            <span>Posted By {{user.username}} on {{format_date createdAt}}</span>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+            <p>{{body_text}}</p>
+            {{!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> --}}
             </blockquote>
+            {{!-- <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> --}}
         </div>
     </div>
 </article> 
