@@ -25,6 +25,6 @@ async function commentFormHandler(event) {
           alert(response.statusText);
         }
       }
-  }
+  };
   
   document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);

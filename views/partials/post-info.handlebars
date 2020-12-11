@@ -1,8 +1,9 @@
 <article class="post">
     <div class="card border-dark">
         <div class="card-header text-light bg-dark">
-            <span>{{title}}</span>
-            <span>Posted By {{user.username}} on {{format_date createdAt}}</span>
+            {{!-- <span>{{title}}</span> --}}
+            <a href='/post/{{id}}'>{{title}}</a>
+            <span>Posted By {{user.username}} on {{createdAt}}</span>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
@@ -11,5 +12,16 @@
             </blockquote>
             {{!-- <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a> --}}
         </div>
+        {{> comments post.comments}}
     </div>
 </article> 
+
+<form class="comment-form">
+  {{!-- <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div> --}}
+</form>
