@@ -75,9 +75,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log("test", req.body)
     Post.create({
         title: req.body.title,
-        body_text: req.body.body_text,
+        body_text: req.body.body,
         user_id: req.session.user_id
     })
     .then(dbPostData => {
@@ -92,7 +93,8 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            body_text: req.body.body
         },
         {
             where: {
@@ -105,8 +107,8 @@ router.put('/:id', (req, res) => {
             res.status(404).json({ message: 'No post found with this id.' });
             return;
         }
-        res.json(dbPostData);
-        res.render('/dashboard');
+        res.json(dbPostData)
+        res.render('dashboard');
     })
     .catch(err => {
         console.log(err);

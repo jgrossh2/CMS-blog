@@ -22,3 +22,6 @@
     width: 100%;
     max-width: 1200px;
 }
+.card {
+    margin: 0 30px 30px 20px;
+}

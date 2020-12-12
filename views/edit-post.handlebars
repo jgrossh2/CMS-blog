@@ -13,14 +13,18 @@
         </div>
         </div>
         <div class="card-body">
-            <blockquote class="blockquote mb-0">
-            <input name="post-body" type="text" value="{{post.body_text}}" />
-            </blockquote>
+            {{!-- <blockquote class="blockquote mb-0"> --}}
+            <div>
+            <input name="post-body" type="text" value="{{post.body_text}}"/>
+            </div>
+            {{!-- </blockquote> --}}
       {{!-- {{> comments post.comments}} --}}
         </div>
 </article>
-    <button type="submit" id="save-btn" class="btn">Save post</button>
-    <button type="button" id="delete-btn" class="btn">Delete post</button>
+    <div class="btn">
+      <button type="submit" id="save-btn">Save post</button>
+      <button type="button" id="delete-btn">Delete post</button>
+    </div>
     </div>
 
 
