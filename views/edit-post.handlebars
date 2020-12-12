@@ -1,12 +1,16 @@
 <article class="edit-post-form">
-    <a href="/dashboard"> &larr; Back to dashboard</a>
+    {{!-- <a href="/dashboard"> &larr; Back to dashboard</a> --}}
   <h2>
     Edit Post
   </h2>
         <div class="card border-dark">
         <div class="card-header text-light bg-dark">
+          <div>
             <input name="post-title" type="text" value="{{post.title}}" />
-            <span>Posted By {{post.user.username}} on {{post.createdAt}}</span>
+        </div>
+        <div>
+            <span>Posted By {{post.user.username}} on {{format_date post.createdAt}}</span>
+        </div>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
@@ -14,22 +18,10 @@
             </blockquote>
       {{!-- {{> comments post.comments}} --}}
         </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-    </div>
 </article>
-
-{{!-- <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form> --}}
+    <button type="submit" id="save-btn" class="btn">Save post</button>
+    <button type="button" id="delete-btn" class="btn">Delete post</button>
+    </div>
 
 
 <script src="/javascript/edit-post.js"></script>
-<script src="/javascript/delete-post.js"></script>
-{{!-- <script src="/javascript/comment.js"></script> --}}

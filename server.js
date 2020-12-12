@@ -3,7 +3,8 @@ const routes = require('./controllers');
 const mysql = require('mysql2');
 const sequelize = require('./config/connection');
 const exphbs = require('express-handlebars');
-// const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 const path = require('path');
 
@@ -32,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //takes contents of folder as static assets
 app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // turn on routes

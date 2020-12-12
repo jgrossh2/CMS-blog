@@ -1,22 +1,52 @@
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+<div class="wrapper">
+  {{#if posts.length}}
+  <main>
+    <h1><a href="/dashboard">Your Dashboard</a></h1>
+      {{#each posts as |post|}}
+      <article class="post">
+        <div class="card border-dark">
+        <div class="card-header text-light bg-dark">
+            <a href='/dashboard/edit/{{id}}'>{{title}}</a>
+            <span>Posted By {{post.user.username}} on {{format_date createdAt}}</span>
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+            <p>{{post.body_text}}</p>
+            </blockquote>
+        </div>
+        </div>
+      </article> 
+      {{/each}}
+  </main>
+  {{/if}}
 
-<div>
-      <button type="submit" id="newpost" href="/">New post</a>
+
+  {{!-- {{#if post.comments}} --}}
+  {{!-- <div class="post">
+    <form class="card comment-form">
+      <div class="card-header">
+        <h3>Comments</h3>
+      </div> --}}
+
+      {{!-- <div class="card-body">
+        {{#each post.comment_text}}
+        <div>
+          <p> {{post.comment_text}} </p>
+          <p> {{user.username}}, {{format_date createdAt}}</p>
+        </div>
+        {{/each}}
+      </div> --}}
+    {{!-- </form> --}}
+    {{!-- {{/if}} --}}
+    </main>
+    <div>
+      <a href="/dashboard/new">New post</a>
+    </div>
+  </div>
 </div>
 
-<script src="/javascript/create-post.js"></script>
-{{!-- <script src="/javascript/add-post.js"></script> --}}
+
+
+
 
 

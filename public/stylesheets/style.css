@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+
+}
+.wrapper {
+    margin: 0 0 30px 0;
+}
+.tech {
+    padding: 10px;
+    font-size: 30px;
+}
+.post {
+    margin: 0 20px 50px 20px;
+}
+.form-group {
+    width: 100%;
+}
+.login-form, .signup-form {
+    margin: 0 0 0 20px;
+}
+.textarea {
+    width: 100%;
+    max-width: 1200px;
+}

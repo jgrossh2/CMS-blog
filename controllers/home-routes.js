@@ -37,7 +37,7 @@ router.get('/post/:id', (req, res) => {
         const post = dbPostData.get({ plain: true });
   
         // pass data to template
-        res.render('dashboard', { 
+        res.render('post-info', { 
             post, 
             loggedIn: req.session.loggedIn });
       })
@@ -86,7 +86,7 @@ router.get('/', (req, res) => {
       });
   });
 
-router.get('/login', (req,res) => {
+router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -94,5 +94,13 @@ router.get('/login', (req,res) => {
 
     res.render('login');
 }); 
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  res.render('sign-up');
+});
 
 module.exports = router;

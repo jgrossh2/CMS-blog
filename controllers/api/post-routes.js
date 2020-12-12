@@ -66,6 +66,7 @@ router.get('/:id', (req, res) => {
             return;
         }
         res.json(dbPostData);
+        res.render('post-info')
     })
     .catch(err => {
         console.log(err);
@@ -73,19 +74,22 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
         body_text: req.body.body_text,
         user_id: req.session.user_id
     })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbPostData => {
+        res.json(dbPostData)
+        res.render('dashboard')
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
     Post.update(
         {
             title: req.body.title
@@ -102,13 +106,14 @@ router.put('/:id', withAuth, (req, res) => {
             return;
         }
         res.json(dbPostData);
+        res.render('/dashboard');
     })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
@@ -120,6 +125,7 @@ router.delete('/:id', withAuth, (req, res) => {
             return;
         }
         res.json(dbPostData);
+        res.render('/dashboard');
     })
     .catch(err => {
         console.log(Err);
