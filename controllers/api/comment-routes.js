@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
     Comment.findAll()
     .then(dbCommentData => {
         res.json(dbCommentData)
-        res.render('post-info')
     })
     .catch(err => {
         console.log(err);
@@ -22,7 +21,6 @@ router.post('/', withAuth, (req, res) => {
     })
     .then(dbCommentData => {
     res.json(dbCommentData)
-    res.render('post-info')
     })
     .catch(err => {
         console.log(err);

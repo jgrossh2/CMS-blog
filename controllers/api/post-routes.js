@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
             'body_text'
         ],
         include: [
-            // include the Comment model here:
           {
               model: Comment,
               attributes: ['id', 'comment_text', 'post_id', 'user_id', 'createdAt'],
@@ -66,7 +65,6 @@ router.get('/:id', (req, res) => {
             return;
         }
         res.json(dbPostData);
-        res.render('post-info')
     })
     .catch(err => {
         console.log(err);
@@ -83,7 +81,6 @@ router.post('/', (req, res) => {
     })
     .then(dbPostData => {
         res.json(dbPostData)
-        res.render('dashboard')
     })
     .catch(err => {
         console.log(err);
@@ -107,8 +104,7 @@ router.put('/:id', (req, res) => {
             res.status(404).json({ message: 'No post found with this id.' });
             return;
         }
-        res.json(dbPostData)
-        res.render('dashboard');
+        res.json(dbPostData);
     })
     .catch(err => {
         console.log(err);
@@ -127,7 +123,6 @@ router.delete('/:id', (req, res) => {
             return;
         }
         res.json(dbPostData);
-        res.render('/dashboard');
     })
     .catch(err => {
         console.log(Err);

@@ -75,7 +75,6 @@ router.get('/', (req, res) => {
         // pass a single post object into the homepage template
         const posts = dbPostData.map(post => post.get({ plain: true }));
         //adding .get... gives the properties we need to display, not everything related
-        // res.render('homepage', dbPostData[0].get({ plain: true }));
         res.render('homepage', { 
             posts,
             loggedIn: req.session.loggedIn });
