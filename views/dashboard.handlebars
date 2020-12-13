@@ -1,7 +1,7 @@
 <div class="wrapper">
   {{#if posts.length}}
   <main>
-    <h1><a href="/dashboard">Your Dashboard</a></h1>
+    <h1 class="dashboard"><a href="/dashboard">Your Dashboard</a></h1>
       {{#each posts as |post|}}
       <article class="post">
         <div class="card border-dark">
@@ -20,7 +20,7 @@
   </main>
   {{/if}}
 
-  <div class="btn">
+  <div class="btn dashboard">
     <button onclick="window.location.href='/dashboard/new'">New post</button>
   </div>
 </div>

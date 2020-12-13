@@ -28,9 +28,8 @@ function logout() {
   function checkIdleTime() {
     _idleSecondsCounter++;
     if (_idleSecondsCounter >= IDLE_TIMEOUT) {
-      alert("time expired!");
+      alert("Due to inactivity, you will be logged out. Please log in again to continue your session!");
       logout()
-      // document.location.replace('/')
     }
   }
 

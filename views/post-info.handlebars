@@ -23,9 +23,13 @@
       {{#each post.comments}}
       <div>
         <p> {{comment_text}} </p>
-        <p> --{{user.username}}, {{format_date createdAt}}</p>
-      </div>
+        <p> --{{user.username}}, 
       {{/each}}
+          {{#each post.comments}}  
+          {{format_date comments.createdAt}}
+          {{/each}}
+        </p>
+      </div>
     </div>
   </form>
 {{/if}}
