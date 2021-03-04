@@ -1,20 +1,19 @@
 <main class="post-list">
-    {{#each posts}}
-    <article class='card'>
-      <div class="card-header">
-        <h2>
-          <a href="/post/{{id}}">{{title}}</a>
-        </h2>
-        <div>
+  {{#each posts}}
+  <article class='card'>
+    <div class="card-header">
+      <h2>
+        <a href="/post/{{id}}">{{title}}</a>
+      </h2>
+      <div>
         Posted by {{user.username}} on {{format_date createdAt}}
-        </div>
       </div>
-      <div class="card-body">
-            <blockquote class="blockquote mb-0">
-            <p>{{body_text}}</p>
-            </blockquote>
-      </div>
-    </article>
-    {{/each}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{body_text}}</p>
+      </blockquote>
+    </div>
+  </article>
+  {{/each}}
 </main>
-

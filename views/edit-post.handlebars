@@ -2,27 +2,26 @@
   <h2>
     Edit Post
   </h2>
-        <div class="card border-dark">
-        <div class="card-header text-light bg-dark">
-          <div>
-            <input name="post-title" type="text" value="{{post.title}}" />
-        </div>
-        <div>
-            <span>Posted By {{post.user.username}} on {{format_date post.createdAt}}</span>
-        </div>
-        </div>
-        <div class="card-body">
-            <div>
-            <input name="post-body" type="text" value="{{post.body_text}}"/>
-            </div>
-      {{!-- {{> comments post.comments}} --}}
-        </div>
+  <div class="card border-dark">
+    <div class="card-header text-light bg-dark">
+      <div>
+        <input name="post-title" type="text" value="{{post.title}}" />
+      </div>
+      <div>
+        <span>Posted By {{post.user.username}} on {{format_date post.createdAt}}</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div>
+        <input name="post-body" type="text" value="{{post.body_text}}" />
+      </div>
+    </div>
 </article>
-    <div class="btn">
-      <button type="submit" id="save-btn">Save post</button>
-      <button type="button" id="delete-btn">Delete post</button>
-    </div>
-    </div>
+<div class="btn">
+  <button type="submit" id="save-btn">Save post</button>
+  <button type="button" id="delete-btn">Delete post</button>
+</div>
+</div>
 
 
 <script src="/javascript/edit-post.js"></script>

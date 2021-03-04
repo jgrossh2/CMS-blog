@@ -2,21 +2,21 @@
   {{#if posts.length}}
   <main>
     <h1 class="dashboard"><a href="/dashboard">Your Dashboard</a></h1>
-      {{#each posts as |post|}}
-      <article class="post">
-        <div class="card border-dark">
-          <div class="card-header text-light bg-dark">
-              <a href='/dashboard/edit/{{id}}'>{{title}}</a>
-              <span>Posted By {{post.user.username}} on {{format_date createdAt}}</span>
-          </div>
-          <div class="card-body">
-              <blockquote class="blockquote mb-0">
-              <p>{{post.body_text}}</p>
-              </blockquote>
-          </div>
+    {{#each posts as |post|}}
+    <article class="post">
+      <div class="card border-dark">
+        <div class="card-header text-light bg-dark">
+          <a href='/dashboard/edit/{{id}}'>{{title}}</a>
+          <span>Posted By {{post.user.username}} on {{format_date createdAt}}</span>
         </div>
-      </article> 
-      {{/each}}
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{post.body_text}}</p>
+          </blockquote>
+        </div>
+      </div>
+    </article>
+    {{/each}}
   </main>
   {{/if}}
 
@@ -24,9 +24,3 @@
     <button onclick="window.location.href='/dashboard/new'">New post</button>
   </div>
 </div>
-
-
-
-
-
-

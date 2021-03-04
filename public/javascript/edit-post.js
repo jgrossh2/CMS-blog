@@ -2,7 +2,6 @@ async function editFormHandler(event) {
     event.preventDefault();
     const title = document.querySelector('input[name="post-title"]').value;
     const body = document.querySelector('input[name="post-body"]').value;
-   console.log("body", body)
     const id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -42,7 +41,7 @@ async function deleteFormHandler(event) {
       } else {
         alert(response.statusText);
     }
-      console.log('button clicked');
+    console.log("button clicked")
 }
       
 document.querySelector('#save-btn').addEventListener('click', editFormHandler);
